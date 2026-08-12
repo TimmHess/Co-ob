@@ -1,0 +1,8 @@
+
+
+# MODEL
+backbone: "mlp"  # 200 200
+#backbone: "mlp" # 400 400 400
+use_GAP: True
+
+store_models: True

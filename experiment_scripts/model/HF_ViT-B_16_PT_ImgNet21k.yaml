@@ -1,0 +1,5 @@
+
+
+# MODEL
+backbone: "HF_ViT-B_16_PT_ImgNet21k"
+use_GAP: True

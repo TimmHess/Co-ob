@@ -1,0 +1,5 @@
+
+
+# MODEL
+backbone: "ijepa_vit_base"
+use_GAP: True

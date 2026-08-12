@@ -1,0 +1,4 @@
+
+# LINEAR PROBE
+use_lp_eval: ["linear"]  # , "linear_force_mh"
+lp_finetune_epochs: 25

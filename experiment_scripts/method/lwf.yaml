@@ -1,0 +1,6 @@
+
+# BarlowTwins (Lightly implementation)
+strategy: finetune
+lwf: True
+lwf_alpha: 1.0
+

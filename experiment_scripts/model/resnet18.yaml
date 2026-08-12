@@ -1,0 +1,5 @@
+
+
+# MODEL
+backbone: "ResNet18"
+use_GAP: True

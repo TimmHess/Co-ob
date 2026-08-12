@@ -1,0 +1,8 @@
+
+
+# DOWNSTREAM EVAL
+downstream_sets:
+  - "imgnet100_256x256"
+
+downstream_rootpaths:
+  - null

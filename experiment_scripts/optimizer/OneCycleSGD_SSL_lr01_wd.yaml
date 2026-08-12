@@ -1,0 +1,12 @@
+
+
+# Static SGD optimizer with OneCycle scheduler
+optim: "sgd"
+momentum: 0.9
+weight_decay: 1e-4
+lr: [0.06]
+lr_scheduling: "onecycle_cos"
+one_cycle_div_factor: [25]
+one_cycle_final_lr: [0.00001]
+one_cycle_pct_start: [0.005] # 5% of the total number of iterations
+grad_clipping: 1.0

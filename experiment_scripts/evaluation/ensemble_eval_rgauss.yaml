@@ -1,0 +1,17 @@
+
+# Eval
+epochs: [0]
+iterations_per_task: [0]
+
+optim: "sgd"
+lr_scheduling: "none"
+skip_initial_eval: True
+store_models: False
+
+# LINEAR PROBE
+lp_finetune_epochs: 25
+
+# DOWNSTREAM EVAL
+downstream_method: ["concat_linear_gaussian_reduce"]
+reduce_target_dim: 50
+

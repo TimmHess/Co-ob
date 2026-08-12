@@ -1,0 +1,3 @@
+
+# DATA_AUGMENTATION
+use_data_aug: "crop_flip"

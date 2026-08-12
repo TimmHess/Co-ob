@@ -1,0 +1,5 @@
+
+
+# MODEL
+backbone: "TM_ViT-B_16_augreg_in1k"
+use_GAP: True

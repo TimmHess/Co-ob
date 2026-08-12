@@ -1,0 +1,7 @@
+
+
+# MODEL
+backbone: "simple_cnn"
+use_GAP: True
+
+store_models: True
