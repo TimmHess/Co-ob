@@ -136,13 +136,19 @@ python train.py \
 Use `--weights_replace_key_dict cassle_ijepa` instead when evaluating I-JEPA checkpoints.
 
 
-## ImageNet datasets (Arrow format)
+## Preparing datasets (Arrow format)
 
-For ImageNet-100 (and other ImageNet derived datasets), images are pre-processed and stored in the HuggingFace Arrow/Datasets format. This is a one-time step.
+Large image datasets (e.g. ImageNet-100) are pre-processed once into the HuggingFace Arrow/Datasets format via `prepare_arrow_dataset.py`. It processes images lazily in shards to keep RAM usage bounded, compiles the shards into a single dataset, scans for corrupt images, and auto-repairs (drops) any it finds.
+
+It ships with two dataset layouts out of the box, selected via `--dataset_type`:
+- `imagenet` — the standardized ILSVRC2012 layout, with `--wnid_subset` to filter to a predefined subset of classes (currently `in100` for ImageNet-100).
+- `imagefolder` — any dataset laid out as `<root>/<class>/<image>` (i.e. compatible with `torchvision.datasets.ImageFolder`), for datasets not covered by the paper.
+
+To support a dataset that doesn't fit either layout, add a collector function `(root_dir, split, wnid_filter=None) -> (samples, class_names)` and register it in `DATASET_COLLECTORS` at the top of the script — the shard/compile/scan/repair pipeline is dataset-agnostic and needs no changes.
 
 ```bash
 # Prepare training split (shorter side resized to 256 px, aspect ratio preserved)
-python arrow_prepare_imgnet.py \
+python prepare_arrow_dataset.py --dataset_type imagenet \
   --root_dir /path/to/ILSVRC2012 \
   --output_dir /path/to/output/imgnet100_short256 \
   --split train \
@@ -150,7 +156,7 @@ python arrow_prepare_imgnet.py \
   --wnid_subset in100
 
 # Prepare validation split
-python arrow_prepare_imgnet.py \
+python prepare_arrow_dataset.py --dataset_type imagenet \
   --root_dir /path/to/ILSVRC2012 \
   --output_dir /path/to/output/imgnet100_short256 \
   --split val \
@@ -158,7 +164,7 @@ python arrow_prepare_imgnet.py \
   --wnid_subset in100
 
 # Verify the saved dataset
-python arrow_prepare_imgnet.py \
+python prepare_arrow_dataset.py \
   --output_dir /path/to/output/imgnet100_short256 \
   --check_dataset
 ```
@@ -179,7 +185,7 @@ Model checkpoints are saved after each experience by default (`--store_models Tr
 
 One example call per dataset / training regime from the paper's main results. The `--seed` shown is one representative seed; the paper reports means over multiple seeds.
 
-All examples below use ImageNet-100, which is not auto-downloaded — prepare it first (see [ImageNet datasets (Arrow format)](#imagenet-datasets-arrow-format)) and pass `--dset_rootpath /path/to/your/imgnet100_short256` to each command (see [Dataset root paths in YAML files](#dataset-root-paths-in-yaml-files)).
+All examples below use ImageNet-100, which is not auto-downloaded — prepare it first (see [Preparing datasets (Arrow format)](#preparing-datasets-arrow-format)) and pass `--dset_rootpath /path/to/your/imgnet100_short256` to each command (see [Dataset root paths in YAML files](#dataset-root-paths-in-yaml-files)).
 
 ### ImageNet-100 — Naive
 
