@@ -1,0 +1,6 @@
+
+# Hyperparamters of training and eval
+epochs: [90] 
+bs: 256
+bs_eval: 256
+use_max_workers: True

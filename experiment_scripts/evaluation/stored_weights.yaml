@@ -1,0 +1,5 @@
+
+# INITIAL EVAL
+skip_initial_eval: True
+epochs: [0]
+optim: "sgd"

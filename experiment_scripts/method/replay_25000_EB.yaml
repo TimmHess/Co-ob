@@ -1,0 +1,7 @@
+
+
+strategy: finetune
+use_replay: True
+replay_storage_policy: 'experience_balanced'
+mem_size: 25000
+

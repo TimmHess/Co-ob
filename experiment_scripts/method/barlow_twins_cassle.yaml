@@ -1,0 +1,8 @@
+
+# BarlowTwins (Lightly implementation)
+strategy: finetune
+barlowtwins_lt: True 
+projection_sizes: [768, 2048, 2048, 2048]
+
+use_two_view_transform: True 
+

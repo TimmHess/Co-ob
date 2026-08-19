@@ -1,0 +1,6 @@
+
+
+# ADDITIONAL DATA SETUP
+scenario: 'repeat_dataset'
+num_experiences: 5
+data_percentage_per_exp: [0.2, 0.2, 0.2, 0.2, 0.2]

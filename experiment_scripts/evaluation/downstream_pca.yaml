@@ -1,0 +1,14 @@
+skip_initial_eval: True
+store_models: False
+
+# Eval
+epochs: [0]
+iterations_per_task: [0]
+optim: "sgd"
+lr_scheduling: "none"
+
+
+# DOWNSTREAM EVAL
+downstream_method: ["pca"]
+
+

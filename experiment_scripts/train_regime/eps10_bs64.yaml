@@ -1,0 +1,5 @@
+
+# Hyperparamters of training and eval
+epochs: [5]
+bs: 64
+bs_eval: 256

@@ -1,0 +1,8 @@
+
+# BarlowTwins (Lightly implementation)
+strategy: finetune
+use_replay: True
+replay_storage_policy: 'class_balanced'
+#use_replay_avl: True
+mem_size: 5000
+

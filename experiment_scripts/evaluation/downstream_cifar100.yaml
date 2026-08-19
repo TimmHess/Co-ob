@@ -1,0 +1,8 @@
+
+
+# DOWNSTREAM EVAL
+downstream_sets:
+  - "cifar100"
+
+downstream_rootpaths:
+  - null

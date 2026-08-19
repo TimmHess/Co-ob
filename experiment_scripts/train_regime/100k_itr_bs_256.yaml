@@ -1,0 +1,7 @@
+
+# Hyperparamters of training and eval
+epochs: [1] 
+iterations_per_task: [100000]
+bs: 256
+bs_eval: 256
+# use_max_workers: False

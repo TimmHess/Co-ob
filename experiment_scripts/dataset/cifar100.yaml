@@ -1,0 +1,21 @@
+
+
+# DATA SETUP
+scenario: 'cifar100'
+scenario_datasets: ['cifar100']
+num_experiences: 1
+#task_incr: True
+#domain_incr: True
+#dset_rootpath: ".../data/cifar100/"
+
+use_rand_class_ordering: True
+#use_rand_class_ordering: False
+
+
+# UTILITY
+num_workers: 4
+#restrict_num_threads: 4
+#restrict_num_interop_threads: 4
+overwrite_results: True
+do_self_destruct: True
+copy_results_on_end: True

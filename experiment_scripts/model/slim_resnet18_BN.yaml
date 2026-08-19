@@ -1,0 +1,6 @@
+
+
+# MODEL
+backbone: "SlimResNet18_nf64"
+use_GAP: True
+

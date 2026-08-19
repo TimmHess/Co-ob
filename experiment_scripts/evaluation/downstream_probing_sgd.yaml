@@ -1,0 +1,8 @@
+# DOWNSTREAM EVAL
+downstream_method: ["linear"]
+lp_optimizer: "sgd"
+#lp_optimizer: "sgd_cosine" #"sgd"
+lp_finetune_epochs: 100
+
+#ds_corruptions: ["none"]
+#ds_corruption_severities: [1, 1, 5]

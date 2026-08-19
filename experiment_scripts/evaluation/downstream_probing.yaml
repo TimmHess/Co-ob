@@ -1,0 +1,6 @@
+# DOWNSTREAM EVAL
+downstream_method: ["linear"]
+lp_finetune_epochs: 25
+
+#ds_corruptions: ["none"]
+#ds_corruption_severities: [1, 1, 5]

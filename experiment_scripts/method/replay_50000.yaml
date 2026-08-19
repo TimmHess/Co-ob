@@ -1,0 +1,6 @@
+
+
+strategy: finetune
+use_replay: True
+mem_size: 50000
+
